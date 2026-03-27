@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mazin Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1 class="fade">Hi, I'm Mazin</h1>
+        <h2><span id="typing"></span></h2>
+        <a href="#projects" class="btn">Explore</a>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2 class="fade">Projects</h2>
+
+        <div class="card fade">
+            <h3>Automatic Irrigation System</h3>
+            <p>Smart watering using sensors.</p>
+        </div>
+
+        <div class="card fade">
+            <h3>Car Game</h3>
+            <p>Simple C++ game.</p>
+        </div>
+    </section>
+
+    <!-- GAME SECTION -->
+    <section class="section">
+        <h2>🎮 Timepass Game</h2>
+        <p>Click as fast as you can in 10 seconds!</p>
+
+        <h1 id="score">0</h1>
+        <button onclick="startGame()" class="btn">Start Game</button>
+        <button onclick="increaseScore()" class="btn">Click Me</button>
+
+        <p id="timer">Time: 10</p>
+        <p id="result"></p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section fade">
+        <h2>Contact</h2>
+        <p>Email: yourname@email.com</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
