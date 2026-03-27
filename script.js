@@ -32,15 +32,17 @@ type();
 // SCROLL ANIMATION
 const faders = document.querySelectorAll(".fade");
 
-window.addEventListener("scroll", () => {
+function showOnScroll() {
     faders.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
             el.classList.add("show");
         }
     });
-});
+}
 
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);
 
 // GAME LOGIC
 let score = 0;

@@ -1,10 +1,19 @@
 body {
     margin: 0;
     font-family: Arial;
-    background: #0f172a;
     color: white;
+
+    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #2563eb, #38bdf8);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
 }
 
+/* Gradient animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 /* HERO */
 .hero {
     height: 100vh;
@@ -53,11 +62,19 @@ body {
 /* ANIMATION */
 .fade {
     opacity: 0;
-    transform: translateY(20px);
-    transition: 1s;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.8s ease;
 }
 
 .fade.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+}
+html {
+    scroll-behavior: smooth;
+}
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
 }
