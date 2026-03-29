@@ -1,77 +1,104 @@
-body {
+/* Reset */
+* {
     margin: 0;
-    font-family: Arial;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #3a0ca3, #4361ee);
     color: white;
-    background: linear-gradient(-45deg, #0f172a, #1e3a8a, #2563eb, #38bdf8);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    overflow-x: hidden;
 }
 
-/* Gradient animation */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
 
-/* HERO */
-.hero {
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px;
 }
 
-/* BUTTON */
-.btn {
-    margin: 10px;
-    padding: 10px 25px;
-    background: #38bdf8;
-    color: black;
-    border: none;
-    border-radius: 20px;
+/* Home Section */
+#home {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* About Section */
+#about {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Games Section */
+#games {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Game Box */
+.game-box {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn:hover {
+.game-box:hover {
     transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* SECTION */
-.section {
-    padding: 80px 20px;
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
-
-/* CARDS */
-.card {
-    background: #1e293b;
-    margin: 20px auto;
-    padding: 20px;
-    width: 260px;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-/* ANIMATION */
-.fade {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: all 0.8s ease;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-html {
-    scroll-behavior: smooth;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
